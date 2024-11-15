@@ -1,0 +1,121 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Cabeçalho */
+body {
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    display: none; /* Ocultar título original */
+}
+
+.header {
+    width: 100%;
+    background-color: #e60000;
+    padding: 10px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h1 {
+    font-size: 24px;
+    margin-left: 10px;
+    color: white;
+}
+
+.header img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+/* Estilo do formulário */
+#formCadastro {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-top: 20px;
+    width: 300px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#formCadastro label {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#formCadastro input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#formCadastro button {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#formCadastro button:hover {
+    background-color: #555;
+}
+
+/* Container de produtos */
+#produtosContainer {
+    background-color: #4f4f4f;
+    color: white;
+    padding: 15px;
+    margin-top: 20px;
+    width: 280px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#produtosContainer p {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+#produtosContainer button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+#produtosContainer button:nth-child(1) {
+    background-color: #00bfff;
+    color: white;
+}
+
+#produtosContainer button:nth-child(2) {
+    background-color: #e60000;
+    color: white;
+}
+
+#produtosContainer button:hover {
+    opacity: 0.9;
+}

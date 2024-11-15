@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Login</h1>
+
+    <form id="formLogin">
+        <label for="username">Nome de Usuário:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha" required>
+
+        <button type="submit">Entrar</button>
+    </form>
+
+    <script>
+        document.getElementById("formLogin").addEventListener("submit", async function (event) {
+            event.preventDefault();
+
+            const username = document.getElementById("username").value;
+            const senha = document.getElementById("senha").value;
+
+            const dados = { username, senha };
+
+            try {
+                const resposta = await fetch("http://localhost:3031/login", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(dados),
+                });
+
+                const resultado = await resposta.json();
+
+                if (resposta.ok) {
+                    alert(resultado.mensagem);
+                    localStorage.setItem("token", resultado.token);  // Salva o token no localStorage
+                    window.location.href = "index.html"; // Redireciona para a página de produtos
+                } else {
+                    alert(resultado.mensagem);
+                }
+            } catch (error) {
+                console.error("Erro ao fazer login:", error);
+            }
+        });
+    </script>
+</body>
+</html>
