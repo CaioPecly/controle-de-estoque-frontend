@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Produto</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>Editar Produto</h1>
@@ -35,13 +36,11 @@
             
             if (id) {
                 try {
-                    // Busca todos os produtos
                     const resposta = await fetch("http://localhost:3031/mostrar");
                     const produtos = await resposta.json();
                     const produto = produtos.find(p => p.id == id);
 
                     if (produto) {
-                        // Preenche o formulário com as informações do produto
                         document.getElementById("produto_id").value = produto.id;
                         document.getElementById("nome_produto").value = produto.nome_produto;
                         document.getElementById("quantidade_produto").value = produto.quantidade_produto;
@@ -59,7 +58,6 @@
             }
         }
 
-        // Envia a atualização do produto
         document.getElementById("formEditar").addEventListener("submit", async function (event) {
             event.preventDefault();
 
@@ -73,7 +71,6 @@
             const dados = { nome_produto, quantidade_produto, valor_unitario, valor_atacado, descricao };
 
             try {
-                // Envia a atualização para a rota de edição
                 const resposta = await fetch(`http://localhost:3031/editar/${id}`, {
                     method: "PUT",
                     headers: {
@@ -85,14 +82,13 @@
                 const resultado = await resposta.json();
                 alert(resultado.mensagem);
 
-                // Redireciona de volta para a lista de produtos após edição
-                window.location.href = "index.html"; // Ou onde você deseja que o usuário vá
+                window.location.href = "index.html";
             } catch (error) {
                 console.error("Erro ao atualizar produto:", error);
             }
         });
 
-        carregarProdutoParaEdicao(); // Carrega os dados do produto na página de edição
+        carregarProdutoParaEdicao();
     </script>
 </body>
 </html>
