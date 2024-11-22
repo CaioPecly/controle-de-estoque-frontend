@@ -7,13 +7,11 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Cabeçalho -->
+ 
     <div class="header">
-        <h1>CFDev</h1>
-        <img src="logo.png" alt="User Icon">
     </div>
 
-    <!-- Formulário para cadastrar novo produto -->
+    
     <form id="formCadastro" method="POST">
         <label for="nome_produto">Nome do Produto:</label>
         <input type="text" id="nome_produto" name="nome_produto" required>
@@ -33,7 +31,6 @@
         <button type="submit">Cadastrar</button>
     </form>
 
-    <!-- Lista de produtos cadastrados -->
     <h2>Produtos Cadastrados</h2>
     <div id="produtosContainer"></div>
 
@@ -112,12 +109,8 @@
         });
 
         carregarProdutos();
-        const token = localStorage.getItem("token");
+        
 
-if (!token) {
-    alert("Você precisa estar logado para acessar esta página.");
-    window.location.href = "login.html"; // Redireciona para o login se não houver token
-}
     </script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-/* Reset */
+
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +6,7 @@
     font-family: Arial, sans-serif;
 }
 
-/* Cabeçalho */
+
 body {
     background-color: #f0f0f0;
     display: flex;
@@ -15,7 +15,7 @@ body {
 }
 
 h1 {
-    display: none; /* Ocultar título original */
+    display: none; 
 }
 
 .header {
@@ -24,22 +24,12 @@ h1 {
     padding: 10px;
     color: white;
     display: flex;
-    justify-content: space-between;
+ 
+    
     align-items: center;
 }
 
-.header h1 {
-    font-size: 24px;
-    margin-left: 10px;
-    color: white;
-}
 
-.header img {
-    width: 60px;
-    height: 0px;
-    border-radius: 50%;
-    margin-right: 10px;
-}
 
 /* Estilo do formulário */
 #formCadastro {
@@ -80,7 +70,6 @@ h1 {
     background-color: #555;
 }
 
-/* Container de produtos */
 #produtosContainer {
     background-color: #4f4f4f;
     color: white;
@@ -106,16 +95,5 @@ h1 {
     font-weight: bold;
 }
 
-#produtosContainer button:nth-child(1) {
-    background-color: #00bfff;
-    color: white;
-}
 
-#produtosContainer button:nth-child(2) {
-    background-color: #e60000;
-    color: white;
-}
 
-#produtosContainer button:hover {
-    opacity: 0.9;
-}
